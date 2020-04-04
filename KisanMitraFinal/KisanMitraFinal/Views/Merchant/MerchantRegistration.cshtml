@@ -1,0 +1,82 @@
+﻿@model KisanMitraFinal.Models.MerchantDetail
+
+@{
+    ViewBag.Title = "MerchantRegistration";
+}
+
+<h2>Merchant Registration</h2>
+<style>
+    table, th, td {
+        padding: 10px;
+        background-color: none;
+    }
+</style>
+
+<div class="container">
+    <body style=" background-image: url('../../Photos/agri4.jpg');
+                    background-repeat: no-repeat;
+                    background-size: cover;">
+
+        @using (Html.BeginForm("MerchantRegistration", "Merchant", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>@Html.Label("Buyer Name")</td>
+                    <td>@Html.TextBox("merchantname", null, new { @class = "form-control" ,required="required"})</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Address")</td>
+                    <td>@Html.TextArea("address", null, new { @class = "form-control" ,required="required" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.MobileNumber)</td>
+                    <td>@Html.TextBoxFor(m => m.MobileNumber , new { @class = "form-control", required = "required" })</td>
+                    <td>@Html.ValidationMessageFor(m => m.MobileNumber, "", new { @class = "error" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Gender")</td>
+                    <td>
+                        @Html.DropDownList("gender",
+                                    new SelectList(new List<string> { "Male", "Female" }),
+                                    "---Select Gender---", new { @class = "form-control", required = "required" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Age")</td>
+                    <td>@Html.TextBox("age", null, new { @class = "form-control" ,required="required" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("State")</td>
+                    <td>
+                        @Html.DropDownList("state",
+                                            new SelectList(new List<string> { "Andra Pradesh","Arunachal Pradesh","Assam","Bihar",
+
+"Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madya Pradesh",
+
+"Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telagana","Tripura","Uttaranchal",
+"Uttar Pradesh","West Bengal" }),"---Select State--", new { @class = "form-control", required = "required" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("District")</td>
+                    <td>@Html.TextBox("district", null, new { @class = "form-control" ,required="required"})</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Block")</td>
+                    <td>@Html.TextBox("block", null, new { @class = "form-control" ,required="required"})</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Username")</td>
+                    <td>@Html.TextBox("username", null, new { @class = "form-control" ,required="required" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Password")</td>
+                    <td>@Html.TextBox("password", null, new { @class = "form-control" ,required="required" })</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Register" class="btn-success" /></td>
+                </tr>
+            </table>
+        }
+</div>
+

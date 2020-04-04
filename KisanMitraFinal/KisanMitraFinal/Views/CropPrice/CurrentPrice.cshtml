@@ -1,0 +1,93 @@
+﻿
+@model IEnumerable<KisanMitraFinal.CropPrice>
+
+@{
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CurrentPrices</title>
+    <style>
+        table, th, td {
+            padding: 10px;
+            background-color: none;
+        }
+    </style>
+</head>
+
+    <body style=" background-image: url('../../Photos/shop3.jpg');
+                    background-repeat: no-repeat;
+                    background-size: cover;">
+        <div class="container-fluid">
+            <h3><center>Current Commodity Prices</center></h3>
+            <br />
+            @using (@Html.BeginForm("CurrentPrice", "CropPrice", FormMethod.Post))
+            {
+                <table>
+
+                    <tr>
+                        <td>@Html.Label("State")</td>
+                        <td>
+                            @Html.DropDownList("state",
+                                                new SelectList(new List<string> {"Andra Pradesh","Arunachal Pradesh","Assam","Bihar",
+
+"Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madya Pradesh",
+
+"Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telagana","Tripura","Uttaranchal",
+"Uttar Pradesh","West Bengal" }), "---Select State---")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("District")</td>
+                        <td>
+                            @Html.TextBox("district", null, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("Block")</td>
+                        <td>
+                            @Html.TextBox("block", null, new { @class = "form-control" })
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Search" class="btn-success" /></td>
+                        <td></td>
+                    </tr>
+                </table>
+            }
+        </div>
+        @if (IsPost)
+        {
+            <div class="container">
+                <h2 class="text-center">Prices for commodities</h2><br>
+                <table class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">@Html.Label("Commodity")</th>
+                            <th scope="col">@Html.Label("Season")</th>
+                            <th scope="col">@Html.Label("Block")</th>
+                            <th scope="col">@Html.Label("Current Crop Price")</th>
+                        </tr>
+                    </thead>
+
+                    @foreach (CropPrice c in Model)
+                    {
+
+                        <tr>
+                            <td scope="row" style="">@c.commodity</td>
+                            <td scope="row">@c.season</td>
+                            <td scope="row">@c.block</td>
+                            <td scope="row">@c.currentPrice</td>
+
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+    </body>
+</html>

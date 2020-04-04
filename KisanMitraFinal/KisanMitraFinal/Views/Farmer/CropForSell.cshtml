@@ -1,0 +1,78 @@
+﻿@model KisanMitraFinal.Models.CropForSell
+
+@{
+    ViewBag.Title = "CropForSell";
+
+}
+
+<h2>CropForSell</h2>
+<style>
+    table, th, td {
+        padding: 10px;
+        background-color: none;
+    }
+</style>
+
+    <body style=" background-image: url('../../Photos/crop.jpg');
+                    background-repeat: no-repeat;
+                    background-size: cover;">
+        <div class="container">
+
+            @using (Html.BeginForm("CropForSell", "Farmer", FormMethod.Post))
+            {
+                <table>
+                    <tr>
+                        <td>@Html.Label("Commodity")</td>
+                        <td>@Html.TextBox("commodity", null, new { @class = "form-control" ,required="required" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("Farmer name")</td>
+                        <td>@Html.TextBox("farmername", null, new { @class = "form-control" ,required="required"})</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(m => m.MobileNumber)</td>
+                        <td>@Html.TextBoxFor(m => m.MobileNumber)</td>
+                        <td>@Html.ValidationMessageFor(m => m.MobileNumber, "", new { @class = "error" })</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>@Html.Label("State")</td>
+                        <td>
+                            @Html.DropDownList("fstate",
+                                                new SelectList(new List<string> { "Andra Pradesh","Arunachal Pradesh","Assam","Bihar",
+
+    "Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madya Pradesh",
+    "Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telagana","Tripura","Uttaranchal",
+    "Uttar Pradesh","West Bengal"}), "---Select State--")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("District")</td>
+                        <td>@Html.TextBox("district", null, new { @class = "form-control" ,required="required" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("Block")</td>
+                        <td>@Html.TextBox("block", null, new { @class = "form-control",required="required" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("Season")</td>
+                        <td>
+                            @Html.DropDownList("season",
+                                                new SelectList(new List<string> { "Kharif", "Rabi" }),
+                                                "---Select Season--")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("AmountOfCommodity")</td>
+                        <td>@Html.TextBox("amountOfCommodity", null, new { @class = "form-control" ,required="required" })</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Register" class="btn-success" /></td>
+                    </tr>
+                </table>
+            }
+
+</div>
+</body>

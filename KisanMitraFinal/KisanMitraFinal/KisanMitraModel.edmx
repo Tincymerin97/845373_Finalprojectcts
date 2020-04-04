@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KisanMitraDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CropForSell">
+          <Key>
+            <PropertyRef Name="mobilenumber" />
+          </Key>
+          <Property Name="csid" Type="int" Nullable="false" />
+          <Property Name="farmername" Type="varchar(max)" Nullable="false" />
+          <Property Name="mobilenumber" Type="bigint" Nullable="false" />
+          <Property Name="fstate" Type="varchar(max)" Nullable="false" />
+          <Property Name="district" Type="varchar(max)" Nullable="false" />
+          <Property Name="block" Type="varchar(max)" Nullable="false" />
+          <Property Name="commodity" Type="varchar(max)" Nullable="false" />
+          <Property Name="season" Type="varchar(max)" Nullable="false" />
+          <Property Name="amountOfCommodity" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CropPrice">
+          <Key>
+            <PropertyRef Name="cid" />
+          </Key>
+          <Property Name="cid" Type="int" Nullable="false" />
+          <Property Name="commodity" Type="varchar(max)" Nullable="false" />
+          <Property Name="season" Type="varchar(max)" Nullable="false" />
+          <Property Name="cstate" Type="varchar(max)" Nullable="false" />
+          <Property Name="district" Type="varchar(max)" Nullable="false" />
+          <Property Name="block" Type="varchar(max)" Nullable="false" />
+          <Property Name="currentPrice" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FarmerDetails">
+          <Key>
+            <PropertyRef Name="mobilenumber" />
+          </Key>
+          <Property Name="farmername" Type="varchar(max)" Nullable="false" />
+          <Property Name="mobilenumber" Type="bigint" Nullable="false" />
+          <Property Name="fstate" Type="varchar(max)" Nullable="false" />
+          <Property Name="district" Type="varchar(max)" Nullable="false" />
+          <Property Name="block" Type="varchar(max)" Nullable="false" />
+          <Property Name="age" Type="int" Nullable="false" />
+          <Property Name="gender" Type="varchar(max)" Nullable="false" />
+          <Property Name="username" Type="varchar(max)" Nullable="false" />
+          <Property Name="fpassword" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MerchantDetails">
+          <Key>
+            <PropertyRef Name="mobilenumber" />
+          </Key>
+          <Property Name="merchantname" Type="varchar(max)" Nullable="false" />
+          <Property Name="mobilenumber" Type="bigint" Nullable="false" />
+          <Property Name="address" Type="varchar(max)" Nullable="false" />
+          <Property Name="mstate" Type="varchar(max)" Nullable="false" />
+          <Property Name="district" Type="varchar(max)" Nullable="false" />
+          <Property Name="block" Type="varchar(max)" Nullable="false" />
+          <Property Name="age" Type="int" Nullable="false" />
+          <Property Name="gender" Type="varchar(max)" Nullable="false" />
+          <Property Name="username" Type="varchar(max)" Nullable="false" />
+          <Property Name="mpassword" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="KisanMitraDBModelStoreContainer">
+          <EntitySet Name="CropForSell" EntityType="Self.CropForSell" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CropPrice" EntityType="Self.CropPrice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FarmerDetails" EntityType="Self.FarmerDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MerchantDetails" EntityType="Self.MerchantDetails" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KisanMitraDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CropForSell">
+          <Key>
+            <PropertyRef Name="mobilenumber" />
+          </Key>
+          <Property Name="csid" Type="Int32" Nullable="false" />
+          <Property Name="farmername" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobilenumber" Type="Int64" Nullable="false" />
+          <Property Name="fstate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="district" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="block" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="commodity" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="season" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="amountOfCommodity" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CropPrice">
+          <Key>
+            <PropertyRef Name="cid" />
+          </Key>
+          <Property Name="cid" Type="Int32" Nullable="false" />
+          <Property Name="commodity" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="season" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cstate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="district" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="block" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="currentPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FarmerDetail">
+          <Key>
+            <PropertyRef Name="mobilenumber" />
+          </Key>
+          <Property Name="farmername" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobilenumber" Type="Int64" Nullable="false" />
+          <Property Name="fstate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="district" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="block" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fpassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MerchantDetail">
+          <Key>
+            <PropertyRef Name="mobilenumber" />
+          </Key>
+          <Property Name="merchantname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobilenumber" Type="Int64" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mstate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="district" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="block" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mpassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="KisanMitraDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CropForSells" EntityType="Self.CropForSell" />
+          <EntitySet Name="CropPrices" EntityType="Self.CropPrice" />
+          <EntitySet Name="FarmerDetails" EntityType="Self.FarmerDetail" />
+          <EntitySet Name="MerchantDetails" EntityType="Self.MerchantDetail" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KisanMitraDBModelStoreContainer" CdmEntityContainer="KisanMitraDBEntities1">
+          <EntitySetMapping Name="CropForSells">
+            <EntityTypeMapping TypeName="KisanMitraDBModel.CropForSell">
+              <MappingFragment StoreEntitySet="CropForSell">
+                <ScalarProperty Name="csid" ColumnName="csid" />
+                <ScalarProperty Name="farmername" ColumnName="farmername" />
+                <ScalarProperty Name="mobilenumber" ColumnName="mobilenumber" />
+                <ScalarProperty Name="fstate" ColumnName="fstate" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="block" ColumnName="block" />
+                <ScalarProperty Name="commodity" ColumnName="commodity" />
+                <ScalarProperty Name="season" ColumnName="season" />
+                <ScalarProperty Name="amountOfCommodity" ColumnName="amountOfCommodity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CropPrices">
+            <EntityTypeMapping TypeName="KisanMitraDBModel.CropPrice">
+              <MappingFragment StoreEntitySet="CropPrice">
+                <ScalarProperty Name="cid" ColumnName="cid" />
+                <ScalarProperty Name="commodity" ColumnName="commodity" />
+                <ScalarProperty Name="season" ColumnName="season" />
+                <ScalarProperty Name="cstate" ColumnName="cstate" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="block" ColumnName="block" />
+                <ScalarProperty Name="currentPrice" ColumnName="currentPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FarmerDetails">
+            <EntityTypeMapping TypeName="KisanMitraDBModel.FarmerDetail">
+              <MappingFragment StoreEntitySet="FarmerDetails">
+                <ScalarProperty Name="farmername" ColumnName="farmername" />
+                <ScalarProperty Name="mobilenumber" ColumnName="mobilenumber" />
+                <ScalarProperty Name="fstate" ColumnName="fstate" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="block" ColumnName="block" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="fpassword" ColumnName="fpassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MerchantDetails">
+            <EntityTypeMapping TypeName="KisanMitraDBModel.MerchantDetail">
+              <MappingFragment StoreEntitySet="MerchantDetails">
+                <ScalarProperty Name="merchantname" ColumnName="merchantname" />
+                <ScalarProperty Name="mobilenumber" ColumnName="mobilenumber" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="mstate" ColumnName="mstate" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="block" ColumnName="block" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="mpassword" ColumnName="mpassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

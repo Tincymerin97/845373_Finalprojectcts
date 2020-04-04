@@ -1,0 +1,92 @@
+﻿
+
+@{
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Kisan Mitra</title>
+    <style>
+        table, th, td {
+            padding: 10px;
+            background-color: none;
+        }
+    </style>
+
+    <h2>Merchant Dashboard</h2>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <br />
+    <br />
+
+    <marquee behavior="scroll" bgcolor="yellow" loop="-1" width="100%">
+        <i>
+            <font color="blue">
+                <b><strong>Welcome</strong> To Merchant Dashboard </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <b> Today's date is :  @DateTime.Now </b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <b>Have a nice day !!!!!!! </b>
+            </font>
+        </i>
+    </marquee>
+</head>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+               
+                
+                <li>@Html.ActionLink("Farmer's Near Me", "Farmers", "Merchant")</li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container body-content">
+    <div class="container body-content">
+        <body style=" background-image: url('../../Photos/farmer.jpg');
+                    background-repeat: no-repeat;
+                    background-size: cover;">
+
+
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <td colspan="10"><button class="btn btn-success btn-right" onclick="window.location.href = '/Login/MerchantLogin';">Logout</button></td>
+
+
+        </body>
+    </div>
+
+  
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+
+</html>

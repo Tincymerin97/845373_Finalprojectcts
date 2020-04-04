@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KISANDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FarmerDetail">
+    <Key>
+      <PropertyRef Name="mobilenumber" />
+    </Key>
+    <Property Name="farmername" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mobilenumber" Type="Int64" Nullable="false" />
+    <Property Name="fstate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="district" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="block" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="age" Type="Int32" Nullable="false" />
+    <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fpassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MerchantDetail">
+    <Key>
+      <PropertyRef Name="mobilenumber" />
+    </Key>
+    <Property Name="merchantname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mobilenumber" Type="Int64" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mstate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="district" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="block" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="age" Type="Int32" Nullable="false" />
+    <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mpassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="KISANDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FarmerDetails" EntityType="Self.FarmerDetail" />
+    <EntitySet Name="MerchantDetails" EntityType="Self.MerchantDetail" />
+    <EntitySet Name="CropForSells" EntityType="KISANDBModel.CropForSell" />
+    <EntitySet Name="CropPrices" EntityType="KISANDBModel.CropPrice" />
+  </EntityContainer>
+  <EntityType Name="CropForSell">
+    <Key>
+      <PropertyRef Name="csid" />
+    </Key>
+    <Property Name="csid" Type="Int32" Nullable="false" />
+    <Property Name="farmername" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="mobilenumber" Type="Int64" Nullable="false" />
+    <Property Name="fstate" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="district" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="block" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="commodity" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="season" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="amountOfCommodity" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CropPrice">
+    <Key>
+      <PropertyRef Name="cid" />
+    </Key>
+    <Property Name="cid" Type="Int32" Nullable="false" />
+    <Property Name="commodity" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="season" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cstate" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="district" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="block" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="currentPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+  </EntityType>
+</Schema>

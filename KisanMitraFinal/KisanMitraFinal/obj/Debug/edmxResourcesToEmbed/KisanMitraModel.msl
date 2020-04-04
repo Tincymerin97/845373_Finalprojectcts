@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KisanMitraDBModelStoreContainer" CdmEntityContainer="KisanMitraDBEntities1">
+    <EntitySetMapping Name="CropForSells">
+      <EntityTypeMapping TypeName="KisanMitraDBModel.CropForSell">
+        <MappingFragment StoreEntitySet="CropForSell">
+          <ScalarProperty Name="csid" ColumnName="csid" />
+          <ScalarProperty Name="farmername" ColumnName="farmername" />
+          <ScalarProperty Name="mobilenumber" ColumnName="mobilenumber" />
+          <ScalarProperty Name="fstate" ColumnName="fstate" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="block" ColumnName="block" />
+          <ScalarProperty Name="commodity" ColumnName="commodity" />
+          <ScalarProperty Name="season" ColumnName="season" />
+          <ScalarProperty Name="amountOfCommodity" ColumnName="amountOfCommodity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CropPrices">
+      <EntityTypeMapping TypeName="KisanMitraDBModel.CropPrice">
+        <MappingFragment StoreEntitySet="CropPrice">
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="commodity" ColumnName="commodity" />
+          <ScalarProperty Name="season" ColumnName="season" />
+          <ScalarProperty Name="cstate" ColumnName="cstate" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="block" ColumnName="block" />
+          <ScalarProperty Name="currentPrice" ColumnName="currentPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FarmerDetails">
+      <EntityTypeMapping TypeName="KisanMitraDBModel.FarmerDetail">
+        <MappingFragment StoreEntitySet="FarmerDetails">
+          <ScalarProperty Name="farmername" ColumnName="farmername" />
+          <ScalarProperty Name="mobilenumber" ColumnName="mobilenumber" />
+          <ScalarProperty Name="fstate" ColumnName="fstate" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="block" ColumnName="block" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="fpassword" ColumnName="fpassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MerchantDetails">
+      <EntityTypeMapping TypeName="KisanMitraDBModel.MerchantDetail">
+        <MappingFragment StoreEntitySet="MerchantDetails">
+          <ScalarProperty Name="merchantname" ColumnName="merchantname" />
+          <ScalarProperty Name="mobilenumber" ColumnName="mobilenumber" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="mstate" ColumnName="mstate" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="block" ColumnName="block" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="mpassword" ColumnName="mpassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

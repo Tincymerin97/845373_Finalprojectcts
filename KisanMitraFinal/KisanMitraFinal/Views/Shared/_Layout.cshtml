@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav ">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Login <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="background-color:lightgreen" role="menu">
+                            <li>@Html.ActionLink("Farmer Login", "FarmerLogin", "Login")</li>
+                            <li>@Html.ActionLink("Merchant Login", "MerchantLogin", "Login")</li>
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">New Registration<span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="background-color:lightblue" role="menu">
+
+                            <li>@Html.ActionLink("Farmer Registration", "FarmerRegistration", "Farmer")</li>
+                            <li>@Html.ActionLink("Merchant Registration", "MerchantRegistration", "Merchant")</li>
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Crop Price <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="background-color:lightpink" role="menu">
+
+                            <li>@Html.ActionLink("Price", "CurrentPrice", "CropPrice")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Season <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="background-color:lightsalmon" role="menu">
+
+
+                            <li>@Html.ActionLink("Kharif", "kharif", "Home")</li>
+                            <li>@Html.ActionLink("Rabi", "Rabi", "Home")</li>
+
+                        </ul>
+                    </li>
+
+                    <li>@Html.ActionLink("CropDetails", "crops", "Home")</li>
+                    <li>@Html.ActionLink("PreviousYearsData", "References", "Home")</li>
+
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p><b>&copy; @DateTime.Now.Year - Kisan Mitra</b></p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

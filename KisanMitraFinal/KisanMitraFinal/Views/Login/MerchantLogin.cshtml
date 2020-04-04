@@ -1,0 +1,47 @@
+﻿@model KisanMitraFinal.Models.MerchantDetail
+
+@{
+    ViewBag.Title = "MerchantLogin";
+   
+}
+
+<h2>Merchant Login</h2>
+<style>
+    table, th, td {
+        padding: 20px;
+        background-color: none;
+    }
+</style>
+
+<div class="container">
+
+    <body style=" background-image: url('../../Photos/shop2.jpg');
+                    background-repeat: no-repeat;
+                    background-size: cover;">
+        @if (ViewBag.Message != null)
+        {
+            <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+            </script>
+        }
+        @using(Html.BeginForm("MerchantLogin", "Login", FormMethod.Post))
+        {
+    <table>
+        <tr>
+            <td>@Html.Label("Username")</td>
+            <td>@Html.TextBox("username", null, new { @class = "form-control" ,required="required" })</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Password")</td>
+            <td>@Html.Password("password", null, new { @class = "form-control" ,required="required"})</td>
+        </tr>
+    </table>
+    <br />
+                <input type="submit" value="Login" class="btn-success" />
+               
+            
+        }
+        </body>
+</div>
